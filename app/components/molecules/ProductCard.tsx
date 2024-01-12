@@ -43,7 +43,7 @@ export default function ProductCard({ product }: Props) {
       product = cardProducts.find((el) => el.id === cardId);
 
       dispatch(removeProductFromCard(product));
-      handleConfirmation("Product removed from cart", "warning");
+      handleConfirmation(`Product ${cardId} removed from cart`, "warning");
     } else {
       // add card if not added yet
       product = products.flat().find((el) => el.id === cardId);
@@ -51,7 +51,7 @@ export default function ProductCard({ product }: Props) {
 
       if (!isAdded) {
         dispatch(addProductToCard(product));
-        handleConfirmation("Product added to cart", "info");
+        handleConfirmation(`Product ${cardId} added to cart`, "info");
       }
     }
   };

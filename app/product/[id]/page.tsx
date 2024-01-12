@@ -9,7 +9,7 @@ type Props = {
 
 export default function ProductPage({ params }: Props) {
   const { products } = useAppSelector((state) => state.products);
-  const product = products.find((el) => el.id === Number(params.id));
+  const product = products.flat().find((el) => el.id === Number(params.id));
 
   return <main>{product && <ProductCard product={product} />}</main>;
 }
