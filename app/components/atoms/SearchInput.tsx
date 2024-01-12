@@ -6,6 +6,7 @@ import {
 } from "@/app/redux/slices/productsSlice";
 import { useAppDispatch, useAppSelector } from "@/app/redux/store";
 import { Label, TextInput } from "flowbite-react";
+import { CiSearch } from "react-icons/ci";
 
 export default function SearchInput() {
   const dispatch = useAppDispatch();
@@ -36,6 +37,9 @@ export default function SearchInput() {
         value={searchValue}
         placeholder="search by name or category"
       />
+      <span className="absolute top-3 right-2">
+        <CiSearch />
+      </span>
     </div>
   );
 }
