@@ -1,3 +1,3 @@
-// export default function ProductPage() {
-//   return <section></section>;
-// }
+export default function ProductPage() {
+  return <section></section>;
+}
