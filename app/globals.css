@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+  transition: 140ms all ease-in;
+}
+
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+  min-width: 100vh;
+  background: #fafafa;
+  scroll-behavior: smooth;
+}
+
+main {
+  margin-bottom: 5rem;
+}
