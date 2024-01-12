@@ -4,6 +4,7 @@ Web Store Prototype Features:
   - Explore detailed product information.
   - Manage your shopping cart.
   - Collection order data.
+  - Client-side pagination.
   - Client-side form validation.
 
 
