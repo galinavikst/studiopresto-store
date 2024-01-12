@@ -4,9 +4,9 @@ const nextConfig = {
     domains: ["fakestoreapi.com"],
   },
 
-  ssr: {
-    noExternal: ["react-icons"], // react-icons
-  },
+  // ssr: {
+  //   noExternal: ["react-icons"], // react-icons
+  // },
 
   async headers() {
     return [

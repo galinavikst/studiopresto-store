@@ -2,7 +2,6 @@
 import { Badge } from "flowbite-react";
 import { HiShoppingCart } from "react-icons/hi";
 import Link from "next/link";
-import React from "react";
 import { useAppSelector } from "../../redux/store";
 
 export default function Header() {

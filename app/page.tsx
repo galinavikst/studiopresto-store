@@ -27,15 +27,11 @@ export default function Home() {
       {!isLoading ? (
         <>
           <Aside />
-          {/* {products.length ? ( */}
           <ProductsSection
             key="home"
             products={products[page - 1]}
             title={activeCategory.toLocaleUpperCase()}
           />
-          {/* ) : (
-            <p>no items...</p>
-          )} */}
         </>
       ) : (
         <Loader />
