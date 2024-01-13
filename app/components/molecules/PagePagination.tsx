@@ -17,7 +17,7 @@ export default function PagePagination() {
   const onPageChange = (page: number) => setCurrentPage(page);
 
   return (
-    <div className="flex overflow-x-auto my-12 justify-end">
+    <div className="flex overflow-x-auto my-12 justify-end mx-10">
       <Pagination
         currentPage={currentPage}
         totalPages={products.length}
