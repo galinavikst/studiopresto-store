@@ -3,6 +3,7 @@ import ProductsSection from "../components/organisms/ProductsSection";
 import { useAppSelector } from "../redux/store";
 import FormSection from "../components/organisms/FormSection";
 import { Button } from "flowbite-react";
+import TotalPrice from "../components/atoms/TotalPrice";
 
 export default function OrderPage() {
   const { cardProducts } = useAppSelector((state) => state.productsCard);
@@ -15,16 +16,19 @@ export default function OrderPage() {
       <FormSection />
       <ProductsSection key="order" products={cardProducts} title="My order" />
       {cardProducts.length !== 0 && (
-        <Button
-          form="orderForm"
-          className="m-auto"
-          size="lg"
-          gradientDuoTone="purpleToBlue"
-          type="submit"
-          disabled={!isFormValid}
-        >
-          Send order
-        </Button>
+        <>
+          <TotalPrice />
+          <Button
+            form="orderForm"
+            className="m-auto"
+            size="lg"
+            gradientDuoTone="purpleToBlue"
+            type="submit"
+            disabled={!isFormValid}
+          >
+            Send order
+          </Button>
+        </>
       )}
     </main>
   );

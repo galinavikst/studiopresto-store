@@ -12,6 +12,7 @@ import {
   removeProductFromCard,
 } from "../../redux/slices/cardSlice";
 import ProductCount from "./ProductCount";
+import Quantity from "../atoms/Quantity";
 
 type Props = {
   product: Product;
@@ -64,13 +65,13 @@ export default function ProductCard({ product }: Props) {
   return (
     <Card
       onClick={() => handleCardClick(id)}
-      className={`group ${
+      className={`group break-inside-avoid mb-5 mx-auto ${
         pathname === "/" || pathname === "/card"
           ? "w-full cursor-pointer overflow-hidden"
           : "w-1/2 bg-transparent shadow-none border-none overflow-visible"
-      } ${pathname === "/order" ? "w-1/4" : ""} 
+      } ${pathname === "/order" ? "md:w-1/4 w-auto" : ""} 
       ${pathname === `/product/${product.id}` ? "mt-5 md:max-w-full w-2/3" : ""}
-      break-inside-avoid mb-5 mx-auto`}
+      `}
       horizontal={pathname === "/card" || pathname === `/product/${product.id}`}
       renderImage={() => (
         <Image
@@ -80,7 +81,7 @@ export default function ProductCard({ product }: Props) {
           width={300}
           height={300}
           src={image}
-          alt="image 1"
+          alt={title}
         />
       )}
     >
@@ -96,6 +97,7 @@ export default function ProductCard({ product }: Props) {
       )}
       <Price price={price} />
       {pathname === "/card" && <ProductCount count={count} cardId={id} />}
+      {pathname === "/order" && <Quantity count={count} />}
       {pathname !== "/order" && (
         <Button onClick={(e) => handleCardBntClick(e, id)}>
           {pathname === "/card" ? "I don't want it" : "I want it"}

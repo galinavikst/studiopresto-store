@@ -12,9 +12,9 @@ export default function ProductList({ products }: Props) {
 
   return (
     <div
-      className={`${pathname === "/card" ? "columns-auto" : "columns-3"} ${
-        pathname === "/order" ? "flex flex-wrap" : ""
-      } grow  px-10 gap-5`}
+      className={`${
+        pathname === "/card" ? "columns-auto" : "columns-2 md:columns-3 "
+      } ${pathname === "/order" ? "flex flex-wrap" : ""} grow px-10 gap-5 `}
     >
       {products?.length ? (
         products.map((product) => (

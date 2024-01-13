@@ -23,7 +23,7 @@ export default function Home() {
   }, [data]);
 
   return (
-    <main className="flex">
+    <main className="flex flex-col items-center md:items-start md:flex-row">
       {!isLoading ? (
         <>
           <Aside />

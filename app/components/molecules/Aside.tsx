@@ -34,12 +34,12 @@ export default function Aside() {
   };
 
   return (
-    <aside className="my-20 w-fit">
-      <ListGroup className="w-48 border-none bg-transparent">
+    <aside className="my-20 w-full md:w-fit">
+      <ListGroup className="md:w-48 w-inherit border-none bg-transparent">
         <ListGroup.Item
           active={"all" === activeCategory}
           onClick={() => handleCategorieClick("all")}
-          className="[&>*]:first:rounded-t-none [&>*]:last:rounded-b-none"
+          className="[&>button]:justify-center [&>button]:md:justify-start [&>*]:first:rounded-t-none [&>*]:last:rounded-b-none"
         >
           ALL
         </ListGroup.Item>
@@ -49,7 +49,7 @@ export default function Aside() {
               active={category === activeCategory}
               key={category}
               onClick={() => handleCategorieClick(category)}
-              className="[&>*]:first:rounded-t-none [&>*]:last:rounded-b-none"
+              className="[&>button]:justify-center [&>button]:md:justify-start [&>*]:first:rounded-t-none [&>*]:last:rounded-b-none"
             >
               {category.toUpperCase()}
             </ListGroup.Item>
