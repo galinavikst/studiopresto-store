@@ -69,13 +69,14 @@ export default function ProductCard({ product }: Props) {
           ? "w-full cursor-pointer overflow-hidden"
           : "w-1/2 bg-transparent shadow-none border-none overflow-visible"
       } ${pathname === "/order" ? "w-1/4" : ""} 
+      ${pathname === `/product/${product.id}` ? "mt-5 md:max-w-full w-2/3" : ""}
       break-inside-avoid mb-5 mx-auto`}
-      horizontal={pathname === "/card"}
+      horizontal={pathname === "/card" || pathname === `/product/${product.id}`}
       renderImage={() => (
         <Image
-          className={`${
-            pathname === "/" ? "group-hover:scale-105" : ""
-          } size-auto max-h-96`}
+          className={`${pathname === "/" ? "group-hover:scale-105" : ""} 
+        ${pathname === `/product/${product.id}` ? "max-w-xs m-auto" : ""}
+        size-auto`}
           width={300}
           height={300}
           src={image}
