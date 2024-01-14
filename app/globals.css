@@ -25,3 +25,8 @@ body {
 main {
   margin-bottom: 5rem;
 }
+
+/* prevent page zooming on safari */
+input {
+  font-size: 16px;
+}
