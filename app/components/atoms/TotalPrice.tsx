@@ -10,7 +10,7 @@ export default function TotalPrice() {
 
   return (
     <p className="text-center font-bold text-lg my-5">
-      Total: <span className="text-pink-500">{total}$</span>
+      Total: <span className="text-pink-500">{total.toFixed(2)}$</span>
     </p>
   );
 }
