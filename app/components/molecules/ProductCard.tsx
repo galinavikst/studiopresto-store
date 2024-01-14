@@ -8,9 +8,9 @@ import Price from "../atoms/Price";
 import ProductRate from "../atoms/ProductRate";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
 import {
-  addProductToCard,
-  removeProductFromCard,
-} from "../../redux/slices/cardSlice";
+  addProductToCart,
+  removeProductFromCart,
+} from "../../redux/slices/cartSlice";
 import ProductCount from "./ProductCount";
 import Quantity from "../atoms/Quantity";
 
@@ -26,7 +26,7 @@ export default function ProductCard({ product }: Props) {
     product;
 
   const { products } = useAppSelector((state) => state.products);
-  const { cardProducts } = useAppSelector((state) => state.productsCard);
+  const { cartProducts } = useAppSelector((state) => state.productsCart);
 
   const handleConfirmation = (text: string, color: string) => {
     dispatch(showConfirmation({ text, isVisible: true, color }));
@@ -41,17 +41,17 @@ export default function ProductCard({ product }: Props) {
 
     if (pathname === "/card") {
       // remove card
-      product = cardProducts.find((el) => el.id === cardId);
+      product = cartProducts.find((el) => el.id === cardId);
 
-      dispatch(removeProductFromCard(product));
+      dispatch(removeProductFromCart(product));
       handleConfirmation(`Product ${cardId} removed from cart`, "warning");
     } else {
       // add card if not added yet
       product = products.flat().find((el) => el.id === cardId);
-      const isAdded = cardProducts.some((el) => el.id === cardId);
+      const isAdded = cartProducts.some((el) => el.id === cardId);
 
       if (!isAdded) {
-        dispatch(addProductToCard(product));
+        dispatch(addProductToCart(product));
         handleConfirmation(`Product ${cardId} added to cart`, "info");
       }
     }

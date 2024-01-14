@@ -6,7 +6,7 @@ import { Button } from "flowbite-react";
 import TotalPrice from "../components/atoms/TotalPrice";
 
 export default function OrderPage() {
-  const { cardProducts } = useAppSelector((state) => state.productsCard);
+  const { cartProducts } = useAppSelector((state) => state.productsCart);
   const { inputs } = useAppSelector((state) => state.order);
 
   const isFormValid = Object.values(inputs).every((input) => input.isValid);
@@ -14,8 +14,8 @@ export default function OrderPage() {
   return (
     <main>
       <FormSection />
-      <ProductsSection key="order" products={cardProducts} title="My order" />
-      {cardProducts.length !== 0 && (
+      <ProductsSection key="order" products={cartProducts} title="My order" />
+      {cartProducts.length !== 0 && (
         <>
           <TotalPrice />
           <Button

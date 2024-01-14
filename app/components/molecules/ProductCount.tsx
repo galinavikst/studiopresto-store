@@ -2,7 +2,7 @@
 import { Button } from "flowbite-react";
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
-import { changeSingleCardProduct } from "../../redux/slices/cardSlice";
+import { changeSingleCardProduct } from "../../redux/slices/cartSlice";
 
 type Props = {
   count: number | undefined;
@@ -11,12 +11,12 @@ type Props = {
 
 export default function ProductCount({ count = 1, cardId }: Props) {
   const dispatch = useAppDispatch();
-  const { cardProducts } = useAppSelector((state) => state.productsCard);
+  const { cartProducts } = useAppSelector((state) => state.productsCart);
 
   const handleCount = (e: React.MouseEvent, btn: string) => {
     e.stopPropagation();
 
-    const productToChange = cardProducts.find((el) => el.id === cardId);
+    const productToChange = cartProducts.find((el) => el.id === cardId);
 
     let updatedCount;
     // check if count is between 1-5

@@ -4,13 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { fakeStoreApi } from "./slices/apiSlice";
 import productsReducer from "./slices/productsSlice";
-import cardProductReducer from "./slices/cardSlice";
+import cartProductReducer from "./slices/cartSlice";
 import orderReducer from "./slices/orderSlice";
 
 const store = configureStore({
   reducer: {
     products: productsReducer,
-    productsCard: cardProductReducer,
+    productsCart: cartProductReducer,
     order: orderReducer,
     [fakeStoreApi.reducerPath]: fakeStoreApi.reducer,
   },
