@@ -6,6 +6,7 @@ Web Store Prototype Features:
   - Collection order data.
   - Client-side pagination.
   - Client-side form validation.
+  - Send emails with client and order details to typed address (implemented in 'send-email' branch, not merged).
 
 
 ## Technology Stack
@@ -17,6 +18,7 @@ Web Store Prototype Features:
 - [FakeStore API](https://fakestoreapi.com/): A fake rest API for e-commerce or shopping website prototype.
 - [RTK Query](https://redux-toolkit.js.org/rtk-query/overview): A powerful data fetching and caching tool.
 - [Flowbite React](https://www.flowbite-react.com/): An open-source UI component library built on top of Tailwind CSS with React components.
+- [Nodemailer](https://nodemailer.com/): A module for Node.js applications to allow easy email sending.
 - [Tailwind](https://tailwindcss.com/): A popular utility-first CSS framework.
 
 ## Installation
