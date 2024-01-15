@@ -41,7 +41,13 @@ Web Store Prototype Features:
     npm install
     ```
 
-4. **Start the development server:**
+4. **Go to send-email branch:**
+
+    ```bash
+    git checkout send-email
+    ```
+    
+5. **Start the development server:**
 
     ```bash
     npm run dev
@@ -49,8 +55,6 @@ Web Store Prototype Features:
 
 5. **Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to see the app in action.**
 
-## Deployment
 
-The app is deployed using [Vercel](https://vercel.com/). You can access the deployed version at: [store](https://studiopresto-store.vercel.app/)
 
 
